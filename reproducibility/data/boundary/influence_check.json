@@ -1,0 +1,10 @@
+{
+  "omitted_id": 25660,
+  "primary_n": 57,
+  "sensitivity_n": 56,
+  "pearson_primary": 0.576507729906399,
+  "pearson_sensitivity": 0.31201700978286684,
+  "spearman_primary": 0.3505963183821623,
+  "spearman_sensitivity": 0.3151742993848257,
+  "note": "Exploratory influence diagnostic only; no primary observation excluded."
+}

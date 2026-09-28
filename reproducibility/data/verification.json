@@ -1,0 +1,12 @@
+{
+  "revision": 7,
+  "pages": 11,
+  "all_pages_visually_checked": true,
+  "unresolved_reference_markers": 0,
+  "influence_check_regenerated": true,
+  "figures_regenerated": true,
+  "primary_reproduction": "Retained from verified v5 run",
+  "seven_regression_tests": "Passed during v5; analysis functions unchanged in v7",
+  "notebooks_executed_end_to_end": false,
+  "original_files_modified": false
+}

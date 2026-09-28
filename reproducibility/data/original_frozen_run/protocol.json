@@ -1,0 +1,21 @@
+{
+  "zip_path": "/content/drive/MyDrive/1_1_2729.zip",
+  "run_id": "20260924T193719_753199Z",
+  "source_sha256": {
+    "validation_v3_model.json": "93b6daed1431d5cd11d83d8f90e1f4c9cec2e466866fee58f6d1e63f6be8be7f",
+    "validation_v3_splits.csv": "4c8432b9447caa6b89a5307cc3ba9cf6855dd44e6061138c6bfe3c90b7de34bc",
+    "repeatability.csv": "4fc5c7226061747fbcd5f77213b52cea7bdfe8dab7da2c835b1227c0dac2be88",
+    "scripts/hit_common.py": "b6d75becacfe25fd5a1e9d9d41f4719b9d03644d68775b853a81f6569dbec9d3",
+    "scripts/audit_3dmsl.py": "3cf80c771a9812137be0252ca89f4b051630a5e95c7df5e1d20d453e60d3c14e"
+  },
+  "analysis": "Apply frozen original model and bounds; no fitting or recalibration",
+  "seed": 790,
+  "bootstrap_replicates": 1000,
+  "primary_metrics": [
+    "mean signed percent error",
+    "median absolute percent error",
+    "RMSE percent",
+    "coverage at original calibration bound"
+  ],
+  "independence": "Within-dataset replication; biological provenance unverified"
+}

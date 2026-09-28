@@ -1,0 +1,21 @@
+{
+  "pdf_pages": 11,
+  "tables": 6,
+  "figures": 4,
+  "references": 33,
+  "unique_external_pdf_urls": 33,
+  "undefined_cross_references": 0,
+  "unused_bibliography_entries": 0,
+  "table_contents_unchanged": true,
+  "unchanged_file_counts": {
+    "code": 44,
+    "notebooks": 2,
+    "data": 31,
+    "paper/figures": 6
+  },
+  "main_abstract_whitespace_words": 232,
+  "optional_short_abstract_words": 172,
+  "new_validation_experiments_run": false,
+  "full_notebook_rerun": false,
+  "visually_reviewed_pages": 11
+}

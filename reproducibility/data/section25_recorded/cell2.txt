@@ -1,0 +1,9 @@
+import os, glob, json
+from datetime import datetime, timezone
+OUT_ROOT   = '/content/drive/MyDrive/HIT_outputs_verified'
+FROZEN_DIR = os.path.join(OUT_ROOT, 'frozen_validation_1_1_2729', '20260924T193719_753199Z')
+IDS_CSV    = os.path.join(OUT_ROOT, 'remaining_analyses', '20260924T201209Z', 'mechanism_offset_instances.csv')
+DEV_ZIP    = '/content/drive/MyDrive/10_24553_27272.zip'
+DATA_DIR   = '/content/data'
+OUT = os.path.join(OUT_ROOT, 'validation', 'section25_' + datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ'))
+os.makedirs(OUT, exist_ok=True); print(OUT)

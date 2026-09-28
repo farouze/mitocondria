@@ -1,0 +1,106 @@
+{
+  "uncorrected": {
+    "n": 2728,
+    "mean_bias": 4.4973453061509785,
+    "mean_bias_ci": [
+      4.354069695230839,
+      4.6244143813393395
+    ],
+    "median_abs": 3.4814156203977764,
+    "median_abs_ci": [
+      3.351834658004668,
+      3.5914943211197046
+    ],
+    "rmse": 5.743377746919712,
+    "loa_lo": -2.505357104123113,
+    "loa_hi": 11.500047716425069,
+    "bound": 8.450882446529207,
+    "covered": 2456,
+    "coverage_ci": [
+      0.8892961876832844,
+      0.9120234604105572
+    ],
+    "coverage_pct": 90.02932551319648
+  },
+  "global_train_mean": {
+    "n": 2728,
+    "mean_bias": 0.8172782022941012,
+    "mean_bias_ci": [
+      0.6945913824988741,
+      0.9480736267597787
+    ],
+    "median_abs": 1.5028123501284518,
+    "median_abs_ci": [
+      1.4496486647235698,
+      1.5438155929888868
+    ],
+    "rmse": 3.541932979933295,
+    "loa_lo": -5.938811103095381,
+    "loa_hi": 7.573367507683584,
+    "bound": 4.631584226976937,
+    "covered": 2456,
+    "coverage_ci": [
+      0.8892961876832844,
+      0.9116568914956011
+    ],
+    "coverage_pct": 90.02932551319648
+  },
+  "occupancy_only_ols": {
+    "n": 2728,
+    "mean_bias": 0.005868430066862923,
+    "mean_bias_ci": [
+      -0.059413100366219725,
+      0.07550881702177213
+    ],
+    "median_abs": 0.6635948335776132,
+    "median_abs_ci": [
+      0.6360011578077549,
+      0.7001938246068274
+    ],
+    "rmse": 1.7428269802449499,
+    "loa_lo": -3.410679343742149,
+    "loa_hi": 3.422416203875875,
+    "bound": 2.661348551355358,
+    "covered": 2512,
+    "coverage_ci": [
+      0.9109237536656891,
+      0.9299853372434017
+    ],
+    "coverage_pct": 92.08211143695014
+  },
+  "coverage_decomposition": {
+    "internal_pct": 96.18181818181819,
+    "mixture_only_counterfactual_pct": 94.16977804046263,
+    "second_batch_pct": 92.08211143695014,
+    "unflagged_share_of_failures_pct": 57.407407407407405
+  },
+  "agreement": {
+    "bias": 1369.3178514042245,
+    "mean_mesh": 29294.735715202372,
+    "mean_pair": 29979.39464090449,
+    "loa": [
+      -3567.7925526811596,
+      6306.428255489609
+    ],
+    "pe_pair_pct": 16.468345886307826,
+    "pe_mesh_pct": 16.853234151292558,
+    "rho_difference_pairmean": 0.8216452564132165
+  },
+  "known_query_box_sensitivity": {
+    "development": 0.1066097991316628,
+    "second_batch": 0.1066097991316628
+  },
+  "exact_mesh_file_hash_overlap": 0,
+  "model_sha256": "d0c454ed6e530ea8125e747bd0a62941cde068bf3eb3919ac8677ac75a7aaa8f",
+  "provenance": "Local deterministic reconstruction with notebook seed 2026; matches reported primary metrics. Original frozen model file was not available for byte comparison."
+}
+     dataset group    n  covered  failures  coverage_pct  wilson_low  wilson_high  median_abs
+    internal   all  550      529        21     96.181818   94.233683    97.489317    0.580258
+    internal   low   16        7         9     43.750000   23.098652    66.821444    3.011039
+    internal other  534      522        12     97.752809   96.113556    98.709926    0.551090
+second_batch   all 2728     2512       216     92.082111   91.008668    93.037205    0.663595
+second_batch   low  181       89        92     49.171271   41.981403    56.395584    2.765872
+second_batch other 2547     2423       124     95.131527   94.225649    95.901473    0.625377
+     dataset  slope_pct  implied_tnorm  mean_residual_pp  rmse_pp  r2_fixed_model
+ development   0.310073       0.003101         -0.093645 1.161355        0.772901
+second_batch   0.310073       0.003101         -0.062066 1.480145        0.828309

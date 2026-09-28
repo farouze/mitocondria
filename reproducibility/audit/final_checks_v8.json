@@ -1,0 +1,16 @@
+{
+  "pages": 11,
+  "unique_external_pdf_urls": 33,
+  "references": 33,
+  "figures": 5,
+  "tables": 6,
+  "unresolved_cross_references": false,
+  "unchanged_file_counts": {
+    "code": 51,
+    "notebooks": 2,
+    "data": 31,
+    "paper/figures": 6,
+    "paper/data": 0
+  },
+  "scope": "Literature and citation audit; no numerical rerun"
+}

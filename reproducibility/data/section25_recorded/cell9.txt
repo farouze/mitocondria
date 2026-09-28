@@ -1,0 +1,1 @@
+## 2. Mesh-containment check (10 objects, offsets 0 and 1.5)

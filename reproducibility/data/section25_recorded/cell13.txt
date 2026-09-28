@@ -1,0 +1,1 @@
+Send this notebook back with its outputs, and I'll fill in the last numbers (the ridge row and one sentence on mesh containment).

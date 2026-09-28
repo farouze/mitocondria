@@ -1,0 +1,17 @@
+[1/10] 24943: released err +1.79% | recreated err 0.0:+0.72% 1.5:+1.47% | agree@1.5 literal 0.910 centred 0.975 (591s)
+[2/10] 24954: released err +8.09% | recreated err 0.0:+4.53% 1.5:+7.74% | agree@1.5 literal 0.912 centred 0.984 (211s)
+[3/10] 25022: released err +2.21% | recreated err 0.0:+1.07% 1.5:+1.85% | agree@1.5 literal 0.911 centred 0.977 (498s)
+[4/10] 25026: released err +2.31% | recreated err 0.0:+1.18% 1.5:+1.99% | agree@1.5 literal 0.930 centred 0.975 (414s)
+[5/10] 25039: released err +7.72% | recreated err 0.0:+4.53% 1.5:+7.57% | agree@1.5 literal 0.914 centred 0.987 (119s)
+[6/10] 25111: released err +3.95% | recreated err 0.0:+1.58% 1.5:+3.60% | agree@1.5 literal 0.908 centred 0.990 (205s)
+[7/10] 25173: released err +6.24% | recreated err 0.0:+3.16% 1.5:+5.92% | agree@1.5 literal 0.894 centred 0.984 (553s)
+[8/10] 25183: released err +2.21% | recreated err 0.0:+1.04% 1.5:+1.87% | agree@1.5 literal 0.924 centred 0.979 (318s)
+[9/10] 25201: released err +5.95% | recreated err 0.0:+3.48% 1.5:+5.37% | agree@1.5 literal 0.871 centred 0.983 (296s)
+[10/10] 25217: released err +1.43% | recreated err 0.0:+0.37% 1.5:+1.10% | agree@1.5 literal 0.902 centred 0.976 (584s)
+
+=== Label-pipeline recreation ===
+objects: 10; convention chosen by agreement with released labels: centred {'centred': 0.980939695837021, 'literal': 0.9104973176743512}
+  offset 0.0: occupancy error median +1.378% (mean +2.165%), fused-mesh error +1.711%, t50 None, agreement near surface 0.9188
+  offset 1.5: occupancy error median +2.795% (mean +3.848%), fused-mesh error +3.038%, t50 None, agreement near surface 0.9809
+  PRIMARY paired change 1.5 - 0: mean +1.683 pp (95% CI +1.112 to +2.306), median +1.364, positive in 10/10
+  recreated (1.5) vs released: {'occ_err_released_median': 3.129675981974278, 'occ_err_recreated_median': 2.7951920213029724, 'median_abs_diff_pp': 0.3339580882781079, 't50_released_median': None, 't50_recreated_median': None}

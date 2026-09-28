@@ -1,0 +1,6 @@
+# Section 25: audit follow-ups (about 35 min)
+
+Two checks that need the data on Drive. Everything else from the audit has already been done from the saved CSVs (`recreation_reanalysis.json`).
+
+1. **Ridge with fold-specific scaling** (~2 min). The scaler is now refit inside every CV fold. The script also checks that every join matches one-to-one and completely, and it hashes the development audit.
+2. **Mesh containment vs trilinear labels** (~30 min). For 10 objects fixed in advance (IDs 6–15 in the E5 list, the first 10 after the 5 pilot objects), points are labeled by containment in the marching-cubes mesh, as the original `sample_mesh.py` does, at offsets 0 and 1.5. The result shows how much the trilinear shortcut changes labels and volume error.

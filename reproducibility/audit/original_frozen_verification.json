@@ -1,0 +1,44 @@
+{
+  "n": 2728,
+  "recorded_input_hashes_match": {
+    "validation_v3_model.json": true,
+    "validation_v3_splits.csv": true,
+    "repeatability.csv": true,
+    "scripts/hit_common.py": true,
+    "scripts/audit_3dmsl.py": true
+  },
+  "model_sha256": "93b6daed1431d5cd11d83d8f90e1f4c9cec2e466866fee58f6d1e63f6be8be7f",
+  "models": {
+    "uncorrected": {
+      "max_abs_error_difference_pp": 4.463096558993129e-14,
+      "mdape": 3.4814156203977986,
+      "rmse": 5.7433777469197125,
+      "bound_pct": 8.450882446529185,
+      "covered": 2456,
+      "low_covered": 40,
+      "low_n": 181,
+      "high_covered": 2416
+    },
+    "global_train_mean": {
+      "max_abs_error_difference_pp": 5.551115123125783e-14,
+      "mdape": 1.502812350128463,
+      "rmse": 3.5419329799332955,
+      "bound_pct": 4.631584226976915,
+      "covered": 2456,
+      "low_covered": 40,
+      "low_n": 181,
+      "high_covered": 2416
+    },
+    "occupancy_only_ols": {
+      "max_abs_error_difference_pp": 6.661338147750939e-14,
+      "mdape": 0.6635948335776243,
+      "rmse": 1.7428269802449505,
+      "bound_pct": 2.661348551355336,
+      "covered": 2512,
+      "low_covered": 89,
+      "low_n": 181,
+      "high_covered": 2423
+    }
+  },
+  "limitation": "Matching archived hashes and predictions verifies artifact consistency, not every historical analytical decision or independent biological provenance."
+}

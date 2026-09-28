@@ -1,0 +1,103 @@
+{
+ "n_objects": 10,
+ "convention_agreement_near_surface_at_1.5": {
+  "centred": 0.980939695837021,
+  "literal": 0.9104973176743512
+ },
+ "convention_used": "centred",
+ "literal": {
+  "by_offset": {
+   "0.0": {
+    "occ_err_median": 1.326101510391442,
+    "occ_err_mean": 2.1044328979413445,
+    "fused_mesh_err_median": 1.7109646366081255,
+    "agree_all_median": 0.99671,
+    "agree_near_median": 0.8873122480689981,
+    "t50_median": null,
+    "n_watertight": 10
+   },
+   "1.5": {
+    "occ_err_median": 2.7693951865455313,
+    "occ_err_mean": 3.8618258755121753,
+    "fused_mesh_err_median": 3.038257221047136,
+    "agree_all_median": 0.997565,
+    "agree_near_median": 0.9104973176743512,
+    "t50_median": null,
+    "n_watertight": 10
+   }
+  },
+  "primary_paired_occ_err_1.5_minus_0": {
+   "n": 10,
+   "mean": 1.7573929775708308,
+   "median": 1.4779542117357658,
+   "sd": 1.0748795904846524,
+   "ci95_mean": [
+    1.1504808419564518,
+    2.405203534241448
+   ],
+   "n_positive": 10
+  },
+  "paired_fused_mesh_err_1.5_minus_0": {
+   "n": 10,
+   "mean": 1.5579249298281694,
+   "median": 1.3272925844390104,
+   "sd": 0.8939550956713721,
+   "ci95_mean": [
+    1.054802899878896,
+    2.0921408872701983
+   ],
+   "n_positive": 10
+  }
+ },
+ "centred": {
+  "by_offset": {
+   "0.0": {
+    "occ_err_median": 1.3780617937171447,
+    "occ_err_mean": 2.1653106790785186,
+    "fused_mesh_err_median": 1.7109646366081255,
+    "agree_all_median": 0.9975,
+    "agree_near_median": 0.9188070521692265,
+    "t50_median": null,
+    "n_watertight": 10
+   },
+   "1.5": {
+    "occ_err_median": 2.7951920213029724,
+    "occ_err_mean": 3.848220378214216,
+    "fused_mesh_err_median": 3.038257221047125,
+    "agree_all_median": 0.999385,
+    "agree_near_median": 0.980939695837021,
+    "t50_median": null,
+    "n_watertight": 10
+   }
+  },
+  "primary_paired_occ_err_1.5_minus_0": {
+   "n": 10,
+   "mean": 1.6829096991356973,
+   "median": 1.3639082926033663,
+   "sd": 1.0332538063299257,
+   "ci95_mean": [
+    1.1123791246033663,
+    2.3058391489659757
+   ],
+   "n_positive": 10
+  },
+  "paired_fused_mesh_err_1.5_minus_0": {
+   "n": 10,
+   "mean": 1.5579249298281517,
+   "median": 1.3272925844389993,
+   "sd": 0.8939550956713761,
+   "ci95_mean": [
+    1.054802899878872,
+    2.092140887270181
+   ],
+   "n_positive": 10
+  }
+ },
+ "recreated_1.5_vs_released": {
+  "occ_err_released_median": 3.129675981974278,
+  "occ_err_recreated_median": 2.7951920213029724,
+  "median_abs_diff_pp": 0.3339580882781079,
+  "t50_released_median": null,
+  "t50_recreated_median": null
+ }
+}

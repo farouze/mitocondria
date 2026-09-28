@@ -1,0 +1,18 @@
+{
+ "utc": "2026-09-26T16:12:34.785826+00:00",
+ "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+ "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+ "cpu_count": 2,
+ "inputs_sha256": {
+  "/content/drive/MyDrive/HIT_outputs_verified/frozen_validation_1_1_2729/20260924T193719_753199Z/frozen_inputs/validation_v3_model.json": "93b6daed1431d5cd11d83d8f90e1f4c9cec2e466866fee58f6d1e63f6be8be7f",
+  "/content/drive/MyDrive/HIT_outputs_verified/frozen_validation_1_1_2729/20260924T193719_753199Z/frozen_inputs/validation_v3_splits.csv": "4c8432b9447caa6b89a5307cc3ba9cf6855dd44e6061138c6bfe3c90b7de34bc",
+  "/content/drive/MyDrive/HIT_outputs_verified/frozen_validation_1_1_2729/20260924T193719_753199Z/frozen_predictions.csv": "df6edb0367dae8b0a4b573bdf7fe85bfefe9d9c16104a52a7b6476fe3294eb5b",
+  "/content/drive/MyDrive/HIT_outputs_verified/frozen_validation_1_1_2729/20260924T193719_753199Z/audit.csv": "0f464a2941689f197b53a6ddfac0278becc24cfaf55755661198cf399e5adb83",
+  "/content/drive/MyDrive/HIT_outputs_verified/remaining_analyses/20260924T201209Z/mechanism_offset_instances.csv": "a222c44d3e49b5dd63b5d12f8cb78a368935a15af25bb66f6de2b3befa507669"
+ },
+ "scripts_sha256": {
+  "e5_boundary_refit.py": "4c11b1b9ee428505ee6261780578ec5eac3ac70326aa5a56ddf5e4748402d73d",
+  "model_sensitivity.py": "47f793baa66167bc2aa7752a7db570a37e98bf97da5287164ce272944d16ff74",
+  "label_pipeline_recreation.py": "30b237e2a79e95ba26d56fedb3ef5674411c83c5b94c3126a42a69b19d179930"
+ }
+}

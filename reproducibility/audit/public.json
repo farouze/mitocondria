@@ -1,0 +1,183 @@
+[
+  {
+    "key": "ref1",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23732471/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/23732471/",
+    "bytes": 21355,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref2",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17298981/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/17298981/",
+    "bytes": 21356,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref4",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39369076/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/39369076/",
+    "bytes": 21356,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref5",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40841958/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/40841958/",
+    "bytes": 21356,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref7",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41249505/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/41249505/",
+    "bytes": 21356,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref9",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40273826/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/40273826/",
+    "bytes": 21355,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref10",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41683617/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/41683617/",
+    "bytes": 21356,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref11",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41704521/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/41704521/",
+    "bytes": 21355,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref14",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35264794/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/35264794/",
+    "bytes": 21356,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref15",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33283212/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/33283212/",
+    "bytes": 21355,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref16",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37768797/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/37768797/",
+    "bytes": 21355,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref18",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27330520/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/27330520/",
+    "bytes": 21354,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref26",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/12578081/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/12578081/",
+    "bytes": 21354,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref31",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28314612/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/28314612/",
+    "bytes": 21354,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref32",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25640425/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/25640425/",
+    "bytes": 21353,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref33",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40016329/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/40016329/",
+    "bytes": 21354,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref17",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/2868172/",
+    "status": 200,
+    "final_url": "https://pubmed.ncbi.nlm.nih.gov/2868172/",
+    "bytes": 21349,
+    "type": "text/html; charset=utf-8",
+    "challenge": true
+  },
+  {
+    "key": "ref27",
+    "url": "https://www.routledge.com/An-Introduction-to-the-Bootstrap/Efron-Tibshirani/p/book/9780412042317",
+    "status": 200,
+    "final_url": "https://www.routledge.com/An-Introduction-to-the-Bootstrap/Efron-Tibshirani/p/book/9780412042317",
+    "bytes": 163498,
+    "type": "text/html; charset=UTF-8",
+    "challenge": false
+  },
+  {
+    "key": "ref25",
+    "url": "https://psycnet.apa.org/record/1996-00472-001",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref30",
+    "url": "https://www.cb.uu.se/~joakim/publications/ivc2005.pdf",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "book_doi",
+    "url": "https://doi.org/10.1201/9780429246593",
+    "status": 200,
+    "final_url": "https://www.taylorfrancis.com/books/mono/10.1201/9780429246593/introduction-bootstrap-bradley-efron-tibshirani",
+    "bytes": 856334,
+    "type": "text/html; charset=UTF-8",
+    "challenge": false
+  }
+]

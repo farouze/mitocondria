@@ -1,0 +1,223 @@
+[
+  {
+    "key": "ref1",
+    "url": "https://europepmc.org/article/MED/23732471",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref2",
+    "url": "https://europepmc.org/article/MED/17298981",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref3",
+    "url": "https://eprints.ncl.ac.uk/266059",
+    "status": 200,
+    "final_url": "https://eprints.ncl.ac.uk/266059",
+    "bytes": 12329,
+    "type": "text/html; charset=utf-8",
+    "challenge": false
+  },
+  {
+    "key": "ref4",
+    "url": "https://europepmc.org/article/MED/39369076",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref5",
+    "url": "https://europepmc.org/article/MED/40841958",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref7",
+    "url": "https://europepmc.org/article/MED/41249505",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref9",
+    "url": "https://europepmc.org/article/MED/40273826",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref10",
+    "url": "https://europepmc.org/article/MED/41683617",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref11",
+    "url": "https://europepmc.org/article/MED/41704521",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref14",
+    "url": "https://europepmc.org/article/MED/35264794",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref15",
+    "url": "https://europepmc.org/article/MED/33283212",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref16",
+    "url": "https://europepmc.org/article/MED/37768797",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref18",
+    "url": "https://europepmc.org/article/MED/27330520",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref26",
+    "url": "https://europepmc.org/article/MED/12578081",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref31",
+    "url": "https://europepmc.org/article/MED/28314612",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref32",
+    "url": "https://europepmc.org/article/MED/25640425",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref33",
+    "url": "https://europepmc.org/article/MED/40016329",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref6",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2667394026000067",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref12",
+    "url": "https://dataverse.no/dataset.xhtml?persistentId=doi:10.18710/JX6JXF",
+    "status": 200,
+    "final_url": "https://dataverse.no/dataset.xhtml?persistentId=doi:10.18710/JX6JXF",
+    "bytes": 260946,
+    "type": "text/html;charset=UTF-8",
+    "challenge": false
+  },
+  {
+    "key": "ref13",
+    "url": "https://www.ebi.ac.uk/empiar/EMPIAR-10791/",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/empiar/EMPIAR-10791/",
+    "bytes": 32137,
+    "type": "text/html; charset=utf-8",
+    "challenge": false
+  },
+  {
+    "key": "ref19",
+    "url": "https://arxiv.org/abs/2107.07511",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2107.07511",
+    "bytes": 45891,
+    "type": "text/html; charset=utf-8",
+    "challenge": false
+  },
+  {
+    "key": "ref20",
+    "url": "https://github.com/bioailab/3DMSL",
+    "status": 200,
+    "final_url": "https://github.com/bioailab/3DMSL",
+    "bytes": 278497,
+    "type": "text/html; charset=utf-8",
+    "challenge": false
+  },
+  {
+    "key": "ref21",
+    "url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Mescheder_Occupancy_Networks_Learning_3D_Reconstruction_in_Function_Space_CVPR_2019_paper.html",
+    "status": 200,
+    "final_url": "https://openaccess.thecvf.com/content_CVPR_2019/html/Mescheder_Occupancy_Networks_Learning_3D_Reconstruction_in_Function_Space_CVPR_2019_paper.html",
+    "bytes": 5269,
+    "type": "text/html; charset=UTF-8",
+    "challenge": false
+  },
+  {
+    "key": "ref22",
+    "url": "https://doi.org/10.1007/s11263-018-1126-y",
+    "status": 200,
+    "final_url": "https://link.springer.com/article/10.1007/s11263-018-1126-y?error=cookies_not_supported&code=69c89ff9-3067-427c-a2c7-4d3fc78a1a4b",
+    "bytes": 564115,
+    "type": "text/html; charset=utf-8",
+    "challenge": false
+  },
+  {
+    "key": "ref23",
+    "url": "https://www.cs.toronto.edu/~jacobson/seminar/lorenson-and-cline-1987.pdf",
+    "status": 200,
+    "final_url": "https://www.cs.toronto.edu/~jacobson/seminar/lorenson-and-cline-1987.pdf",
+    "bytes": 1273178,
+    "type": "application/pdf",
+    "challenge": false
+  },
+  {
+    "key": "ref24",
+    "url": "https://igl.ethz.ch/projects/winding-number/",
+    "status": 200,
+    "final_url": "https://igl.ethz.ch/projects/winding-number/",
+    "bytes": 19706,
+    "type": "text/html; charset=UTF-8",
+    "challenge": false
+  },
+  {
+    "key": "ref25",
+    "url": "https://doi.org/10.1037/1082-989X.1.1.30",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref27",
+    "url": "https://link.springer.com/book/10.1007/978-1-4899-4541-9",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "key": "ref28",
+    "url": "https://papers.neurips.cc/paper_files/paper/2019/hash/8fb21ee7a2207526da55a679f0332de2-Abstract.html",
+    "status": 200,
+    "final_url": "https://papers.neurips.cc/paper_files/paper/2019/hash/8fb21ee7a2207526da55a679f0332de2-Abstract.html",
+    "bytes": 9353,
+    "type": "text/html; charset=utf-8",
+    "challenge": false
+  },
+  {
+    "key": "ref29",
+    "url": "https://doi.org/10.1007/s10994-013-5355-6",
+    "status": 200,
+    "final_url": "https://link.springer.com/article/10.1007/s10994-013-5355-6?error=cookies_not_supported&code=d6483da1-be10-4a93-a3e9-fa39d5d86c44",
+    "bytes": 463541,
+    "type": "text/html; charset=utf-8",
+    "challenge": false
+  },
+  {
+    "key": "ref30",
+    "url": "https://doi.org/10.1016/j.imavis.2004.06.012",
+    "status": 200,
+    "final_url": "https://linkinghub.elsevier.com/retrieve/pii/S0262885604001507",
+    "bytes": 2698,
+    "type": "text/html;charset=UTF-8",
+    "challenge": false
+  },
+  {
+    "key": "ref34",
+    "url": "https://github.com/davidstutz/mesh-fusion/blob/master/2_fusion.py",
+    "status": 200,
+    "final_url": "https://github.com/davidstutz/mesh-fusion/blob/master/2_fusion.py",
+    "bytes": 412248,
+    "type": "text/html; charset=utf-8",
+    "challenge": false
+  },
+  {
+    "key": "empiar_api",
+    "url": "https://www.ebi.ac.uk/empiar/api/entry/10791/",
+    "status": 200,
+    "final_url": "https://www.ebi.ac.uk/empiar/api/entry/10791/",
+    "bytes": 8291,
+    "type": "application/json",
+    "challenge": false
+  }
+]

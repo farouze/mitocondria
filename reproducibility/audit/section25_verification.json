@@ -1,0 +1,20 @@
+{
+  "n_objects": 10,
+  "n_condition_records": 40,
+  "n_hybrid_condition_records": 20,
+  "expected_nonpilot_ids_match": true,
+  "max_summary_difference": 0.0,
+  "max_notebook_summary_difference": 0.0,
+  "max_section24_interpolation_difference_pp": 0.0,
+  "model_comparison_max_differences": {
+    "bias": 1.524995407731211e-13,
+    "mdape": 1.4432899320127035e-13,
+    "rmse": 6.8833827526759706e-15,
+    "bound": 1.3322676295501878e-13,
+    "coverage": 0.0,
+    "coverage_low_occ": 0.0,
+    "coverage_high_occ": 0.0
+  },
+  "hybrid_positive_offset_pairs": 10,
+  "limitation": "Independent reaggregation of supplied outputs, not a fresh rendering/fusion or full containment rerun."
+}

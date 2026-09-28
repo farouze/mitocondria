@@ -1,0 +1,145 @@
+{
+  "run_utc": "2026-09-25T17:31:34.670419+00:00",
+  "frozen_table": "output/revision_v5/data/reproduced_second_batch_predictions.csv",
+  "columns": {
+    "uncorrected": "uncorrected_error_pct",
+    "global": "global_train_mean_error_pct",
+    "occ_only": "occupancy_only_ols_error_pct"
+  },
+  "bounds": {
+    "uncorrected": 8.450882446529207,
+    "global": 4.631584226976937,
+    "occ_only": 2.661348551355358
+  },
+  "bound_sources": {
+    "uncorrected": "output/revision_v5/data/reconstructed_development/validation_v3_model.json:calibration_bounds_pct/uncorrected",
+    "global": "output/revision_v5/data/reconstructed_development/validation_v3_model.json:calibration_bounds_pct/global_train_mean",
+    "occ_only": "output/revision_v5/data/reconstructed_development/validation_v3_model.json:calibration_bounds_pct/occupancy_only_ols"
+  },
+  "paper_values": {
+    "bounds": {
+      "uncorrected": 8.451,
+      "global": 4.632,
+      "occ_only": 2.661
+    },
+    "frozen_coverage": {
+      "uncorrected": 90.0,
+      "global": 90.0,
+      "occ_only": 92.1
+    },
+    "internal_coverage": {
+      "uncorrected": 96.4,
+      "global": 96.4,
+      "occ_only": 96.2
+    }
+  },
+  "frozen": {
+    "evaluation": "frozen second shard",
+    "n": 2728,
+    "coverage_pct": {
+      "uncorrected": 90.02932551319648,
+      "global": 90.02932551319648,
+      "occ_only": 92.08211143695014
+    },
+    "covered_counts": {
+      "uncorrected": 2456,
+      "global": 2456,
+      "occ_only": 2512
+    },
+    "cross_tab": {
+      "covered_by_both": 2456,
+      "uncorrected_only": 0,
+      "global_only": 0,
+      "neither": 272
+    },
+    "global_offset_c": 3.6502345326886028,
+    "global_offset_source": "saved JSON",
+    "global_offset_implied_by_errors": 3.650234532688601,
+    "max_deviation_from_global_formula": 2.886579864025407e-14,
+    "raw_error_window_uncorrected": [
+      -8.450882446529207,
+      8.450882446529207
+    ],
+    "raw_error_window_global": [
+      -1.1504133811520045,
+      8.45088244652921
+    ],
+    "upper_limit_difference_pp": 3.552713678800501e-15,
+    "n_raw_errors_below_global_lower_limit": 0,
+    "n_raw_errors_in_gap_between_upper_limits": 0,
+    "n_negative_raw_errors": 0,
+    "verdict": "IDENTICAL covered sets. The global method covers raw errors in [-1.150, 8.451] and the uncorrected method covers [-8.451, 8.451]. The upper limits differ by +0.000 percentage points and 0 raw error(s) fall below the global lower limit, so the equal coverage is an arithmetic consequence of a one-signed error distribution, not a copy error."
+  },
+  "internal_test": {
+    "evaluation": "internal test",
+    "n": 550,
+    "coverage_pct": {
+      "uncorrected": 96.36363636363636,
+      "global": 96.36363636363636,
+      "occ_only": 96.18181818181817
+    },
+    "covered_counts": {
+      "uncorrected": 530,
+      "global": 530,
+      "occ_only": 529
+    },
+    "cross_tab": {
+      "covered_by_both": 530,
+      "uncorrected_only": 0,
+      "global_only": 0,
+      "neither": 20
+    },
+    "global_offset_c": 3.6502345326886028,
+    "global_offset_source": "saved JSON",
+    "global_offset_implied_by_errors": 3.6502345326886014,
+    "max_deviation_from_global_formula": 2.531308496145357e-14,
+    "raw_error_window_uncorrected": [
+      -8.450882446529207,
+      8.450882446529207
+    ],
+    "raw_error_window_global": [
+      -1.1504133811520045,
+      8.45088244652921
+    ],
+    "upper_limit_difference_pp": 3.552713678800501e-15,
+    "n_raw_errors_below_global_lower_limit": 0,
+    "n_raw_errors_in_gap_between_upper_limits": 0,
+    "n_negative_raw_errors": 0,
+    "verdict": "IDENTICAL covered sets. The global method covers raw errors in [-1.150, 8.451] and the uncorrected method covers [-8.451, 8.451]. The upper limits differ by +0.000 percentage points and 0 raw error(s) fall below the global lower limit, so the equal coverage is an arithmetic consequence of a one-signed error distribution, not a copy error."
+  },
+  "figure": {
+    "png": "output/revision_v5/data/coverage_recheck/frozen_errors.png",
+    "pdf": "output/revision_v5/data/coverage_recheck/frozen_errors.pdf",
+    "dpi": 300,
+    "width_in": 3.5,
+    "box_stats": {
+      "uncorrected": {
+        "n": 2728,
+        "q1": 2.2089981180769716,
+        "median": 3.4814156203977764,
+        "q3": 5.512791636931031,
+        "whisker_lo": 0.1992554017963277,
+        "whisker_hi": 10.46076667261866,
+        "n_beyond_whiskers": 150
+      },
+      "global": {
+        "n": 2728,
+        "q1": -1.3904806111722678,
+        "median": -0.16287364235301743,
+        "q3": 1.7969637142065673,
+        "whisker_lo": -3.329446524121382,
+        "whisker_hi": 6.570686666205461,
+        "n_beyond_whiskers": 150
+      },
+      "occ_only": {
+        "n": 2728,
+        "q1": -0.7639906615763109,
+        "median": -0.047156189199915,
+        "q3": 0.5777637717659545,
+        "whisker_lo": -2.765872259536273,
+        "whisker_hi": 2.544845864641787,
+        "n_beyond_whiskers": 209
+      }
+    }
+  }
+}

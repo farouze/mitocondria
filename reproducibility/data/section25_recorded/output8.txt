@@ -1,0 +1,23 @@
+development audit: /content/drive/MyDrive/HIT_outputs_verified/audit_descriptors_qc.csv (n=2720; splits {'train': 1630, 'test': 550, 'calibration': 540})
+frozen audit: n=2728
+
+Step 0 reproduction: max |diff| vs saved frozen predictions = 4.46e-14 (occupancy-only), 2.49e-14 (global) -> REPRODUCED
+
+=== Model sensitivity (EXPLORATORY) ===
+       model evaluation   bias  mdape  rmse  bound  coverage  coverage_low_occ  coverage_high_occ
+ uncorrected   internal  3.608  3.035 4.286  8.451    96.364            37.500             98.127
+ uncorrected     frozen  4.497  3.481 5.743  8.451    90.029            22.099             94.857
+      global   internal -0.040  1.370 2.231  4.632    96.364            37.500             98.127
+      global     frozen  0.817  1.503 3.542  4.632    90.029            22.099             94.857
+      p_only   internal -0.085  0.822 1.591  2.868    95.636            37.500             97.378
+      p_only     frozen  0.431  0.927 2.718  2.868    89.370            27.072             93.797
+retained_ols   internal -0.032  0.580 1.149  2.661    96.182            43.750             97.753
+retained_ols     frozen  0.006  0.664 1.743  2.661    92.082            49.171             95.132
+       ridge   internal -0.032  0.583 1.150  2.657    96.182            43.750             97.753
+       ridge     frozen  0.009  0.665 1.747  2.657    91.972            48.619             95.053
+
+ridge alpha (CV within training split): 0.2512
+uncorrected  minus retained, frozen batch: dMdAPE +2.818 [+2.713, +2.937]
+global       minus retained, frozen batch: dMdAPE +0.839 [+0.782, +0.889]
+p_only       minus retained, frozen batch: dMdAPE +0.263 [+0.221, +0.305]
+ridge        minus retained, frozen batch: dMdAPE +0.001 [-0.003, +0.006]

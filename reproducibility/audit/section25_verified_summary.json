@@ -1,0 +1,22 @@
+{
+  "0.0": {
+    "n": 10,
+    "median_vol_diff_pp_mesh_minus_trilinear": 0.1296962077033892,
+    "max_abs_vol_diff_pp": 0.26415235990482344,
+    "median_label_agreement_near_surface": 0.9944176013805005,
+    "median_agree_released_trilinear": 0.9188070521692264,
+    "median_agree_released_mesh": 0.92393609367246
+  },
+  "1.5": {
+    "n": 10,
+    "median_vol_diff_pp_mesh_minus_trilinear": 0.019329398410872112,
+    "max_abs_vol_diff_pp": 0.09988132037961339,
+    "median_label_agreement_near_surface": 0.9972601917115169,
+    "median_agree_released_trilinear": 0.980939695837021,
+    "median_agree_released_mesh": 0.9815377250158297
+  },
+  "paired_change_1.5_minus_0": {
+    "trilinear_mean": 1.6829096991356973,
+    "mesh_mean": 1.566481515093625
+  }
+}

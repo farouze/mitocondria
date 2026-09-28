@@ -1,0 +1,15 @@
+{
+  "pages": 13,
+  "tables": 8,
+  "figures": 4,
+  "experiment_map": "E1\u2013E10",
+  "source_references_resolve": true,
+  "all_tables_figures_referenced": true,
+  "original_run_files_preserved": 15,
+  "original_protocol_hashes_verified": 5,
+  "prediction_rows_verified": 2728,
+  "visual_review": "All 13 pages inspected; no observed clipping or overlaps.",
+  "remaining_priority1_gap": "Section 25 per-object hybrid-containment outputs are not supplied.",
+  "priority2_complete": true,
+  "priority3_complete": true
+}

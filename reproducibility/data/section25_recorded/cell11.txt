@@ -1,0 +1,1 @@
+!cd /content && python label_pipeline_recreation.py --shard-root "$SHARD" --ids-csv "$IDS_CSV" --skip-first 5 --n 10 --offsets 0,1.5 --no-t50 --mesh-check-offsets 0,1.5 --out "$OUT/mesh_check"

@@ -1,0 +1,9 @@
+def find_dev_shard():
+    hits = [p for p in glob.glob(f'{DATA_DIR}/**/24553/raw_mesh.off', recursive=True) if '__MACOSX' not in p]
+    return os.path.dirname(os.path.dirname(hits[0])) if hits else None
+SHARD = find_dev_shard()
+if SHARD is None:
+    os.makedirs(DATA_DIR, exist_ok=True)
+    !unzip -q -n "$DEV_ZIP" -d "$DATA_DIR"
+    SHARD = find_dev_shard()
+print('shard root:', SHARD)

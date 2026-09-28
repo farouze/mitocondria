@@ -1,0 +1,203 @@
+#!/usr/bin/env python3
+"""Plan item 4: small, EXPLORATORY model-sensitivity study for the occupancy-volume correction.
+
+Development and second-batch outcomes have already been inspected, so every
+result here is exploratory. The retained model and its frozen results stay the
+primary analysis; nothing here replaces them.
+
+Models (all trained on the development TRAIN split only, bounds from CAL):
+  uncorrected      V_o unchanged
+  global           mean training error (the paper's global correction)
+  p_only           OLS of signed error on occupancy fraction p
+  retained_ols     OLS on the five paper features (reproduces the deployed model)
+  ridge            the same five standardized features, ridge penalty chosen by
+                   5-fold CV inside the training split only
+Features: V_o/B_o, p, log V_o, log B_o, max/min occupancy extent, with
+B_o = product of occupancy extents. Predictions clipped to [-50, 100] %.
+Corrected volume V_o / (1 + e_hat/100).
+
+Step 0 checks that retained_ols reproduces the saved frozen predictions
+(frozen_predictions.csv). If it does not, the comparison is still reported but
+flagged, because it would then not be the paper's model.
+"""
+import argparse, glob, json, os, re, sys
+from datetime import datetime, timezone
+import numpy as np
+import pandas as pd
+
+LOW = 0.02
+
+
+def find_dev_audit(root):
+    best = None
+    for p in glob.glob(os.path.join(root, "**", "audit.csv"), recursive=True) + \
+             glob.glob(os.path.join(root, "*.csv")):
+        if re.search(r"frozen_validation|remaining_analyses|paper_fixes", p):
+            continue
+        try:
+            df = pd.read_csv(p)
+        except Exception:
+            continue
+        need = {"instance_id", "mesh_volume", "occ_volume_est", "occ_fraction_inside", "occ_extent_x"}
+        if need <= set(df.columns) and len(df) >= 2000:
+            ids = pd.to_numeric(df["instance_id"], errors="coerce")
+            if ids.min() >= 24553:
+                if best is None or len(df) > len(best[1]):
+                    best = (p, df)
+    return best
+
+
+def features(df):
+    Vo = df["occ_volume_est"].to_numpy(float)
+    p = df["occ_fraction_inside"].to_numpy(float)
+    E = df[["occ_extent_x", "occ_extent_y", "occ_extent_z"]].to_numpy(float)
+    Bo = E.prod(1)
+    X = np.column_stack([Vo / Bo, p, np.log(Vo), np.log(Bo), E.max(1) / E.min(1)])
+    e = 100 * (Vo / df["mesh_volume"].to_numpy(float) - 1)
+    return X, e, Vo, p
+
+
+class Model:
+    def __init__(self, kind):
+        self.kind = kind
+
+    def fit(self, X, e):
+        if self.kind == "uncorrected":
+            return self
+        if self.kind == "global":
+            self.c = float(np.mean(e)); return self
+        Z = X[:, [1]] if self.kind == "p_only" else X
+        self.mu, self.sd = Z.mean(0), Z.std(0, ddof=0)
+        Zs = (Z - self.mu) / self.sd
+        if self.kind in ("p_only", "retained_ols"):
+            A = np.column_stack([np.ones(len(Zs)), Zs])
+            self.beta = np.linalg.lstsq(A, e, rcond=None)[0]
+        else:  # ridge, alpha by 5-fold CV within training data
+            from sklearn.linear_model import RidgeCV
+            self.r = RidgeCV(alphas=np.logspace(-3, 4, 36), cv=5).fit(Zs, e)
+            self.alpha = float(self.r.alpha_)
+            self.beta = np.r_[self.r.intercept_, self.r.coef_]
+        return self
+
+    def predict_err(self, X):
+        if self.kind == "uncorrected":
+            return np.zeros(len(X))
+        if self.kind == "global":
+            return np.full(len(X), self.c)
+        Z = X[:, [1]] if self.kind == "p_only" else X
+        Zs = (Z - self.mu) / self.sd
+        return np.clip(self.beta[0] + Zs @ self.beta[1:], -50, 100)
+
+
+def residual(e_raw, e_hat):
+    """error of the corrected volume relative to the mesh (%)."""
+    return 100 * ((1 + e_raw / 100) / (1 + e_hat / 100) - 1)
+
+
+def bound(res_cal):
+    a = np.sort(np.abs(res_cal)); n = len(a)
+    return float(a[min(n, int(np.ceil((n + 1) * 0.95))) - 1])
+
+
+def metrics(r, b, p):
+    ar = np.abs(r); low = p < LOW
+    return {"n": int(len(r)), "bias": float(r.mean()), "mdape": float(np.median(ar)), "rmse": float(np.sqrt(np.mean(r ** 2))),
+            "p95_abs": float(np.percentile(ar, 95)), "bound": b, "coverage": float(np.mean(ar <= b) * 100),
+            "coverage_low_occ": float(np.mean(ar[low] <= b) * 100) if low.any() else np.nan, "n_low_occ": int(low.sum()),
+            "coverage_high_occ": float(np.mean(ar[~low] <= b) * 100)}
+
+
+def paired_boot(ra, rb, n=5000, seed=0):
+    """difference in MdAPE and mean |e| (model a minus model b), object bootstrap."""
+    rng = np.random.default_rng(seed); A, B = np.abs(ra), np.abs(rb); N = len(A)
+    dm, dmean = [], []
+    for _ in range(n):
+        i = rng.integers(0, N, N)
+        dm.append(np.median(A[i]) - np.median(B[i])); dmean.append(A[i].mean() - B[i].mean())
+    q = lambda x: [float(np.percentile(x, 2.5)), float(np.percentile(x, 97.5))]
+    return {"d_mdape": float(np.median(A) - np.median(B)), "d_mdape_ci": q(dm),
+            "d_mean_abs": float(A.mean() - B.mean()), "d_mean_abs_ci": q(dmean)}
+
+
+def main():
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--out-root", required=True, help="HIT_outputs_verified")
+    ap.add_argument("--frozen-dir", required=True)
+    ap.add_argument("--dev-audit", help="development audit.csv (auto-detected)")
+    ap.add_argument("--out", required=True)
+    a = ap.parse_args()
+    os.makedirs(a.out, exist_ok=True)
+
+    if a.dev_audit:
+        dpath, dev = a.dev_audit, pd.read_csv(a.dev_audit)
+    else:
+        f = find_dev_audit(a.out_root)
+        if not f:
+            sys.exit("development audit.csv not found; pass --dev-audit")
+        dpath, dev = f
+    splits = pd.read_csv(os.path.join(a.frozen_dir, "frozen_inputs", "validation_v3_splits.csv"))
+    dev = dev.merge(splits, on="instance_id", how="inner")
+    fro = pd.read_csv(os.path.join(a.frozen_dir, "audit.csv"))
+    fpred = pd.read_csv(os.path.join(a.frozen_dir, "frozen_predictions.csv"))
+    print(f"development audit: {dpath} (n={len(dev)}; splits {dev['split'].value_counts().to_dict()})")
+    print(f"frozen audit: n={len(fro)}")
+
+    Xd, ed, _, pd_ = features(dev)
+    Xf, ef, _, pf = features(fro)
+    tr = dev["split"].str.lower().str.startswith("train").to_numpy()
+    ca = dev["split"].str.lower().str.startswith("cal").to_numpy()
+    te = dev["split"].str.lower().str.startswith("test").to_numpy()
+
+    kinds = ["uncorrected", "global", "p_only", "retained_ols", "ridge"]
+    res, models = {}, {}
+    for k in kinds:
+        m = Model(k).fit(Xd[tr], ed[tr]); models[k] = m
+        rc = residual(ed[ca], m.predict_err(Xd[ca])); b = bound(rc)
+        rt = residual(ed[te], m.predict_err(Xd[te])); rf = residual(ef, m.predict_err(Xf))
+        res[k] = {"internal": metrics(rt, b, pd_[te]), "frozen": metrics(rf, b, pf), "_rt": rt, "_rf": rf}
+
+    # Step 0: reproduction of the deployed model on the frozen batch
+    chk = fro[["instance_id"]].assign(mine=res["retained_ols"]["_rf"], mine_g=res["global"]["_rf"]).merge(
+        fpred[["instance_id", "occupancy_only_ols_error_pct", "global_train_mean_error_pct"]], on="instance_id")
+    rep = {"n": len(chk), "max_abs_diff_occ_only": float((chk.mine - chk.occupancy_only_ols_error_pct).abs().max()),
+           "max_abs_diff_global": float((chk.mine_g - chk.global_train_mean_error_pct).abs().max())}
+    rep["reproduces_paper_model"] = rep["max_abs_diff_occ_only"] < 1e-3
+    print(f"\nStep 0 reproduction: max |diff| vs saved frozen predictions = {rep['max_abs_diff_occ_only']:.2e} "
+          f"(occupancy-only), {rep['max_abs_diff_global']:.2e} (global) -> "
+          + ("REPRODUCED" if rep["reproduces_paper_model"] else "NOT reproduced: check feature definitions before using this table"))
+
+    comp = {k: {"internal": paired_boot(res[k]["_rt"], res["retained_ols"]["_rt"]),
+                "frozen": paired_boot(res[k]["_rf"], res["retained_ols"]["_rf"])} for k in kinds if k != "retained_ols"}
+    rows = []
+    for k in kinds:
+        for ev in ("internal", "frozen"):
+            r = dict(model=k, evaluation=ev, **res[k][ev]); rows.append(r)
+    tab = pd.DataFrame(rows)
+    tab.to_csv(os.path.join(a.out, "model_sensitivity_table.csv"), index=False)
+    coefs = {k: {"beta": [float(x) for x in models[k].beta]} for k in ("p_only", "retained_ols", "ridge")}
+    coefs["ridge"]["alpha"] = models["ridge"].alpha
+    coefs["global"] = {"c": models["global"].c}
+    json.dump({"run_utc": datetime.now(timezone.utc).isoformat(), "status": "EXPLORATORY (outcomes previously inspected)",
+               "dev_audit": dpath, "reproduction": rep, "paired_vs_retained": comp, "coefficients": coefs,
+               "feature_order": ["Vo/Bo", "p", "log Vo", "log Bo", "max/min extent"]},
+              open(os.path.join(a.out, "model_sensitivity.json"), "w"), indent=1, default=float)
+
+    # LaTeX rows for a supplementary table
+    names = {"uncorrected": "Uncorrected", "global": "Global mean", "p_only": "Occupancy fraction only",
+             "retained_ols": "Retained five-feature OLS", "ridge": "Ridge (same features)"}
+    with open(os.path.join(a.out, "model_sensitivity_rows.tex"), "w") as fh:
+        for k in kinds:
+            i, f = res[k]["internal"], res[k]["frozen"]
+            fh.write(f"{names[k]} & {i['mdape']:.3f} & {f['mdape']:.3f} & {f['rmse']:.3f} & {f['bias']:+.3f} & "
+                     f"{f['bound']:.3f} & {f['coverage']:.1f}\\% & {f['coverage_high_occ']:.1f}\\% \\\\\n")
+    print("\n=== Model sensitivity (EXPLORATORY) ===")
+    show = tab[["model", "evaluation", "bias", "mdape", "rmse", "bound", "coverage", "coverage_low_occ", "coverage_high_occ"]]
+    print(show.to_string(index=False, float_format=lambda x: f"{x:.3f}"))
+    print(f"\nridge alpha (CV within training split): {models['ridge'].alpha:.4g}")
+    for k, v in comp.items():
+        print(f"{k:12s} minus retained, frozen batch: dMdAPE {v['frozen']['d_mdape']:+.3f} "
+              f"[{v['frozen']['d_mdape_ci'][0]:+.3f}, {v['frozen']['d_mdape_ci'][1]:+.3f}]")
+
+
+if __name__ == "__main__":
+    main()

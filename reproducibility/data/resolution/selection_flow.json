@@ -1,0 +1,32 @@
+[
+  {
+    "criterion": "slab_boundary",
+    "excluded_sequential": 586,
+    "remaining": 617,
+    "fails_regardless_of_other_criteria": 586
+  },
+  {
+    "criterion": "image_boundary",
+    "excluded_sequential": 61,
+    "remaining": 556,
+    "fails_regardless_of_other_criteria": 131
+  },
+  {
+    "criterion": "fewer_than_2000_voxels",
+    "excluded_sequential": 0,
+    "remaining": 556,
+    "fails_regardless_of_other_criteria": 36
+  },
+  {
+    "criterion": "fewer_than_3_z_planes",
+    "excluded_sequential": 0,
+    "remaining": 556,
+    "fails_regardless_of_other_criteria": 34
+  },
+  {
+    "criterion": "roi_over_2000000",
+    "excluded_sequential": 6,
+    "remaining": 550,
+    "fails_regardless_of_other_criteria": 130
+  }
+]

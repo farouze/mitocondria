@@ -1,0 +1,23 @@
+{
+ "protocol": "controlled re-implementation of the 3DMSL mesh-fusion label step",
+ "offsets_vox": [
+  0.0,
+  0.75,
+  1.5
+ ],
+ "ids": [
+  "24558",
+  "24611",
+  "24853",
+  "24898",
+  "24925"
+ ],
+ "resolution": 256,
+ "truncation_vox": 10,
+ "n_views": 100,
+ "image": 640,
+ "focal": 640.0,
+ "erosion": "3x3 grey",
+ "started_utc": "2026-09-26T16:18:02.728981+00:00",
+ "primary_endpoint": "paired change in occupancy-volume error, offset 1.5 minus offset 0 (convention chosen by agreement with released labels)"
+}

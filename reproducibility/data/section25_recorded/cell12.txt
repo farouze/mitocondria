@@ -1,0 +1,16 @@
+import pandas as pd, numpy as np
+d = pd.read_csv(os.path.join(OUT, 'mesh_check', 'recreation_per_condition.csv'), dtype={'id': str})
+c = d[d.convention == 'centred'].copy()
+c['vol_diff_pp'] = c['mesh_occ_err_pct'] - c['occ_err_pct']
+summ = {str(o): {'n': int(len(g)),
+                 'median_vol_diff_pp_mesh_minus_trilinear': float(g.vol_diff_pp.median()),
+                 'max_abs_vol_diff_pp': float(g.vol_diff_pp.abs().max()),
+                 'median_label_agreement_near_surface': float(g.mesh_vs_trilinear_agree_near.median()),
+                 'median_agree_released_trilinear': float(g['agree_near_0.01'].median()),
+                 'median_agree_released_mesh': float(g['mesh_agree_near_0.01'].median())}
+        for o, g in c.groupby('offset_vox')}
+x = c[c.offset_vox == 1.5].set_index('id'); y = c[c.offset_vox == 0].set_index('id')
+summ['paired_change_1.5_minus_0'] = {'trilinear_mean': float((x.occ_err_pct - y.occ_err_pct).mean()),
+                                    'mesh_mean': float((x.mesh_occ_err_pct - y.mesh_occ_err_pct).mean())}
+json.dump(summ, open(os.path.join(OUT, 'mesh_check', 'mesh_check_summary.json'), 'w'), indent=1)
+print(json.dumps(summ, indent=1))

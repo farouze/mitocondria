@@ -1,0 +1,13 @@
+{
+  "pages": 12,
+  "tables": 8,
+  "figures": 4,
+  "all_tables_figures_referenced": true,
+  "all_citation_keys_resolve": true,
+  "references_unchanged_from_v9": true,
+  "portable_summary_replay_identical": true,
+  "visual_review": "All 12 pages inspected; no observed clipping or overlaps.",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3"
+}

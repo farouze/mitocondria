@@ -1,0 +1,25 @@
+[
+  {
+    "key": "ref17_metadata",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=EXT_ID%3A2868172%20AND%20SRC%3AMED&format=json&resultType=core",
+    "status": 200,
+    "bytes": 3062
+  },
+  {
+    "key": "ref11_fulltext",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12907005/fullTextXML",
+    "status": 200,
+    "bytes": 72223
+  },
+  {
+    "key": "ref1_pdf",
+    "url": "https://cshperspectives.cshlp.org/content/5/6/a011072.full.pdf",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "key": "ref10_fulltext",
+    "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12897202/fullTextXML",
+    "status": 200,
+    "bytes": 106815
+  }
+]
